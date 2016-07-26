@@ -1,9 +1,99 @@
 ~~~~~~~~~~~~~~~~
+version 7.2.3
+~~~~~~~~~~~~~~~~
+
+* added better handling around powershell detection
+
+~~~~~~~~~~~~~~~~
+version 7.2.2
+~~~~~~~~~~~~~~~~
+
+* added fsociety banner to initial loading
+
+~~~~~~~~~~~~~~~~
+version 7.2.1
+~~~~~~~~~~~~~~~~
+
+* fix automatic update line replace bug
+
+~~~~~~~~~~~~~~~~
+version 7.2
+~~~~~~~~~~~~~~~~
+
+* fixed an issue on installer not copying SET directory properly (why was I moving a file and ... nevermind.)
+* changed delay time for HTA attack vector from 3 seconds to 10 seconds to allow proper loading
+* added wording when using gmail and application specific passwords
+* rewrote ms08-067 instead of being the python exploit to use the metasploit default which is much more reliable
+* re-introduced the SMS spoofing method (now option 10) - it has been optimized and reduced to only use SMSGang as a main provider. 
+* added ability to add your own attachments via file format attacks instead of having to use the ones built in
+* added ability to add your own attachments via mass mailer attack vector
+* added new config option called wget_deep and incremented config to 7.2 - this will allow 1 deep download wgets
+* added ability to select on deeper wgets through web cloner in the web attack vectors - this will allow you to clone the site and not just the index.html which might be better.. to enable this edit /etc/setoolkit/set.config and turn WGET_DEEP to on.
+* added a new check upon startup (which may delay the start of set for a couple seconds, but it will check to see if there is a new version of SET available for you automatically - this is displayed on the main launcher UI when you first start SET
+* fixed setup.py a bit to reflect more on whats out there.. I may convert this to a standard setup installer eventually
+* updated the licensing agreement - should check it out =)
+* changed the default payload in HTA and Java Applet attack to be reverse_https instead of reverse_tcp (although both can be specified)
+* number of fixes around spacing for python3 and python3 compatibility (urllib)
+* removed string decode on HTA attack vector which is no longer needed in python3 (and python2)
+* changed urllib2 to import urllib instead for python2 and python3 compatibility in setcore
+* changed encoding techniques to bytes instead of strings for python3 compatibility
+
+~~~~~~~~~~~~~~~~
+version 7.1.2
+~~~~~~~~~~~~~~~~
+
+* fixed an issue on pdf generation payloads when metasploit had never been run before on a system - now forces directory creation
+
+~~~~~~~~~~~~~~~~
+version 7.1.1
+~~~~~~~~~~~~~~~~
+
+* fixes an issue when generating PDF exes that would cause an outfile error
+
+~~~~~~~~~~~~~~~~
+version 7.1
+~~~~~~~~~~~~~~~~
+
+* added so you can use multiple IP addreses based on space on mssql bruter
+* rewrote mssql bruter to incorporate pymssql
+* rewrote delivery payload method to use certuil instead of windows debug method
+* added better description around handling tabnabbing
+* added better ability to handle powershell injection
+* rewrote and moved off impacket to pymssql
+* added import own binary for mssql deployment
+* changed deployment method from old base64 conversion bypass to Matthew Graeber's certutil binary method
+* added option to import new file or metasploit file for meterpreter bypass method
+* added better handling around binary injection technique for binary dropper method 
+* added better threading within brute forcing sql accounts
+* fixed an issue where SET directory would not properly fill in dll hijacking and give invalid /root/.setsrc path instead of .set/src 
+* reduced file format generation counter to when it prompts error message
+* fixed an issue in mssql bruter that would remove the port parameter when attempting to brute force
+* added if udp 1434 is not found, it will fall back to nmap to discover if 1433 default port is open - ran into pentest where udp wasn't allowed and missed SQL servers because of this
+* added better handling and description of the SQL servers found during the test - might be useful for pentests to store that data somewhere
+* added more improvements and handling around MSSQL server
+* added latest version of ridenum to fasttrack
+* changed rid_enum.py to ridenum.py to be consistent with naming schema
+
+~~~~~~~~~~~~~~~~
+version 7.0.6
+~~~~~~~~~~~~~~~~
+
+* fix an issue that caused tabnabbing to fail
+
+~~~~~~~~~~~~~~~~
+version 7.0.5
+~~~~~~~~~~~~~~~~
+
+* switched psexec powershell injection to reverse_https
+* switched mssql payload injection to reverse_https
+
+~~~~~~~~~~~~~~~~
 version 7.0.4
 ~~~~~~~~~~~~~~~~
 
 * fixed an issue with tds not working on mssql with powershell injection
 * fixed an issue that would cause payload generation to continue generating and never close
+* added powershell obfuscation for all attack vectors =)
 
 ~~~~~~~~~~~~~~~~
 version 7.0.3

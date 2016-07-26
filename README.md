@@ -1,5 +1,5 @@
 #The Social-Engineer Toolkit (SET)
-Copyright 2015 The Social-Engineer Toolkit (SET)
+Copyright 2016 The Social-Engineer Toolkit (SET)
 
 Written by: David Kennedy (ReL1K)
 
@@ -19,5 +19,5 @@ For bug reports or enhancements, please open an issue here: https://github.com/t
 
 ### Supported platforms
 
-- Linux
-- Windows (experimental)
+* Linux
+* Mac OS X 
